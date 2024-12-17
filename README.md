@@ -5,7 +5,7 @@
 ---
 
 ### 🌟 **Project Description**  
-**Brainy News** is a modern and responsive news application built with React and Material-UI. It allows users to explore news summaries, view detailed articles, and stay updated with highlighted banners.
+**Brainy News** is a modern and responsive news application built with React and Material-UI with Node and Express backend(MERN). It allows users to explore news summaries, view detailed articles, and stay updated with highlighted banners.
 
 ---
 
@@ -21,12 +21,13 @@
 
 ### 🛠️ **Tech Stack**  
 
-- **Frontend**: React, React Router, Material-UI  
+- **Frontend**: React, React Router, Material-UI
 - **Styling**: Material-UI, React-Slick (for banners)  
 - **Dependencies**:  
    - `@mui/material`  
    - `react-router-dom`  
-   - `react-slick`  
+   - `react-slick`
+- **Backend**: WIP
 
 ---
 
