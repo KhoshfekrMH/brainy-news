@@ -37,6 +37,22 @@
   color: #fff9c4; /* Pale Gold on hover */
 }
 
+/* Active State: Yellow Underline */
+.navbar-button-active {
+  position: relative;
+  color: #ffd700; /* Golden Yellow text */
+}
+
+.navbar-button-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Align underline at the bottom */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #ffd700; /* Golden Yellow */
+}
+
 /* Mobile Drawer Menu */
 .navbar-mobile-menu {
   display: flex;

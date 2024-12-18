@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../../shared/context/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../../assets/images/Brainy-News-logo.png";
 
 import AppBar from "@mui/material/AppBar";
@@ -29,6 +29,8 @@ const pages = [
 const Navbar = () => {
   const { isLoggedIn } = useContext(UserContext);
   const [drawerOpen, setDrawerOpen] = useState(false); // State for Drawer
+
+  const location = useLocation();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -118,7 +120,9 @@ const Navbar = () => {
               component={Link}
               to={page.path}
               sx={{ color: "white" }}
-              className="navbar-button"
+              className={`navbar-button ${
+                location.pathname === page.path ? "navbar-button-active" : ""
+              }`}
             >
               {page.name}
             </Button>
