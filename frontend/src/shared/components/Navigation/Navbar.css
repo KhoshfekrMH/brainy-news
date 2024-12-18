@@ -1,0 +1,49 @@
+/* Navbar Background */
+.navbar {
+  background-color: #1e1e1e !important;
+  box-shadow: none;
+}
+
+/* Logo Styling */
+.navbar-logo {
+  box-shadow:
+    0,
+    0,
+    10px,
+    4px rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background-color: #ffd700; /* Golden Yellow */
+  height: 50px;
+  width: 50px;
+  margin-right: 16px;
+}
+
+/* Navbar Title */
+.navbar-title {
+  flex-grow: 1;
+  font-weight: bold;
+  color: #ffd700; /* Golden Yellow */
+}
+
+/* Desktop Navigation Links */
+.navbar-links .navbar-button {
+  color: #ffd700; /* Golden Yellow */
+  text-transform: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links .navbar-button:hover {
+  color: #fff9c4; /* Pale Gold on hover */
+}
+
+/* Mobile Drawer Menu */
+.navbar-mobile-menu {
+  display: flex;
+  margin-right: 16px;
+}
+
+/* Avatar Section */
+.navbar-avatar {
+  margin-left: 16px;
+}

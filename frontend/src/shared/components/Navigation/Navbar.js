@@ -18,6 +18,8 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
+import "./Navbar.css";
+
 const pages = [
   { name: "Home", path: "/" },
   { name: "News", path: "/news" },
@@ -56,16 +58,20 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className="navbar">
       <Toolbar>
         {/*====== Mobile Drawer Icon ======*/}
-        <Box sx={{ display: { xs: "flex", md: "none" }, mr: 2 }}>
+        <Box
+          sx={{ display: { xs: "flex", md: "none" }, mr: 2 }}
+          className="navbar-mobile-menu"
+        >
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
             onClick={toggleDrawer(true)}
+            sx={{ display: { display: { xs: "flex", md: "none" } } }}
           >
             <MenuIcon />
           </IconButton>
@@ -84,6 +90,7 @@ const Navbar = () => {
           }}
           alt="Brainy News Logo"
           src={logo}
+          className="navbar-logo"
         />
 
         {/*====== Title (Hidden on mobile) ======*/}
@@ -95,18 +102,23 @@ const Navbar = () => {
             fontWeight: "bold",
             display: { xs: "none", md: "block" },
           }}
+          className="navbar-title"
         >
           Brainy News
         </Typography>
 
         {/*====== Desktop Navigation Links (Hidden on mobile) ======*/}
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+        <Box
+          sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}
+          className="navbar-links"
+        >
           {pages.map((page) => (
             <Button
               key={page.name}
               component={Link}
               to={page.path}
               sx={{ color: "white" }}
+              className="navbar-button"
             >
               {page.name}
             </Button>
@@ -115,7 +127,7 @@ const Navbar = () => {
 
         {/*====== Avatar with condition ======*/}
         {isLoggedIn && (
-          <Box sx={{ ml: 2 }}>
+          <Box sx={{ ml: 2 }} className="navbar-avatar">
             <Tooltip title="Profile">
               <IconButton>
                 <Avatar alt="User Avatar" src="https://picsum.photos/200/300" />
