@@ -1,0 +1,20 @@
+/* Yellow Shadow on Card */
+.news-card {
+  transition: box-shadow 0.3s ease !important;
+  border-radius: 8px !important;
+}
+
+.news-card:hover {
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.8) !important;
+}
+
+/* Yellow and Black Button */
+.news-card-button {
+  background-color: #ffd700 !important;
+  color: #1e1e1e !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.news-card-button:hover {
+  background-color: #e5c100 !important;
+}

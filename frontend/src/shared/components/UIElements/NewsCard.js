@@ -10,7 +10,7 @@ import "./NewsCard.css";
 
 const NewsCard = ({ image, title, intro, onReadMore }) => {
   return (
-    <Card sx={{ maxWidth: 345, margin: "16px auto" }}>
+    <Card sx={{ maxWidth: 345, margin: "16px auto" }} className="news-card">
       {/*====== News Media ======*/}
       <CardMedia component="img" height="140" image={image} alt={title} />
 
@@ -29,7 +29,12 @@ const NewsCard = ({ image, title, intro, onReadMore }) => {
 
       {/*====== Read More Button ======*/}
       <CardActions>
-        <Button size="small" color="primary" onClick={onReadMore}>
+        <Button
+          size="small"
+          color="primary"
+          onClick={onReadMore}
+          className="news-card-button"
+        >
           Read More
         </Button>
       </CardActions>
