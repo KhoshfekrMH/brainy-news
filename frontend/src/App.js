@@ -1,56 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./shared/context/UserContext";
-import Navbar from "../src/shared/components/Navigation/Navbar";
+import Header from "./shared//layout/Header";
 import NewsCard from "./shared/components/UIElements/NewsCard";
-import NewsBannerSlide from "./shared/components/UIElements/NewsBannerSlide";
+import { newsItems, banners } from "./shared/data/DummyData";
+import Footer from "./shared/layout/Footer";
 
 import "./App.css";
-//TODO: Remove dummy data
-const newsItems = [
-  {
-    id: 1,
-    title: "News item 1",
-    image: "https://picsum.photos/200/300",
-    intro: "This is the intro for news item 1",
-  },
-  {
-    id: 2,
-    title: "News item 2",
-    image: "https://picsum.photos/200/300",
-    intro: "This is the intro for news item 2",
-  },
-  {
-    id: 3,
-    title: "News item 3",
-    image: "https://picsum.photos/200/300",
-    intro: "This is the intro for news item 3",
-  },
-];
-
-const banners = [
-  {
-    id: 1,
-    src: "https://picsum.photos/200/300",
-    alt: "Banner 1",
-    title: "Banner Title 1",
-    link: "/news/1",
-  },
-  {
-    id: 2,
-    src: "https://picsum.photos/200/300",
-    alt: "Banner 2",
-    title: "Banner Title 2",
-    link: "/news/2",
-  },
-  {
-    id: 3,
-    src: "https://picsum.photos/200/300",
-    alt: "Banner 3",
-    title: "Banner Title 3",
-    link: "/news/3",
-  },
-];
 
 //TODO: Remove dummy pages
 const Home = () => {
@@ -62,10 +18,7 @@ const Home = () => {
   };
   return (
     <div>
-      <h1>Home</h1>
-      <div>
-        <NewsBannerSlide banners={banners} />
-      </div>
+      <Header showBanner={true} banners={banners} />
       <div>
         {newsItems.map((news) => (
           <NewsCard
@@ -77,6 +30,7 @@ const Home = () => {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
@@ -84,7 +38,9 @@ const Home = () => {
 const News = () => {
   return (
     <div>
+      <Header showBanner={false} />
       <h1>News</h1>
+      <Footer />
     </div>
   );
 };
@@ -92,7 +48,9 @@ const News = () => {
 const Dashboard = () => {
   return (
     <div>
+      <Header showBanner={false} />
       <h1>Dashboard</h1>
+      <Footer />
     </div>
   );
 };
@@ -101,7 +59,6 @@ const App = () => {
   return (
     <UserProvider>
       <Router>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/news" element={<News />} />
