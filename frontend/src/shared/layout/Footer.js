@@ -1,15 +1,22 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Box, Link } from "@mui/material";
-
-import "./Footer.css";
+import { Typography, Box, Link } from "@mui/material";
 
 const Footer = () => {
   return (
-    <footer className="footer-container">
+    <footer>
       {/*=== Top Section ===*/}
-      <Box className="footer-top">
+      <Box
+        sx={{
+          backgroundColor: "black",
+          color: "yellow",
+          padding: "20px 40px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         {/* == Address ==*/}
-        <Box className="footer-left">
+        <Box sx={{ flex: 1, textAlign: "left" }}>
           <Typography variant="body1">
             Address: 123 Main Street, City, Country
           </Typography>
@@ -18,32 +25,75 @@ const Footer = () => {
         </Box>
 
         {/* == NavBar links ==*/}
-        <Box className="footer-right">
-          <Link href="/" className="footer-link">
+        <Box sx={{ flex: 1, textAlign: "right" }}>
+          <Link
+            href="/"
+            sx={{
+              color: "yellow",
+              textDecoration: "none",
+              marginLeft: "15px",
+              "&:hover": { textDecoration: "underline" },
+            }}
+          >
             Home
           </Link>
-          <Link href="/news" className="footer-link">
+          <Link
+            href="/news"
+            sx={{
+              color: "yellow",
+              textDecoration: "none",
+              marginLeft: "15px",
+              "&:hover": { textDecoration: "underline" },
+            }}
+          >
             News
           </Link>
-          <Link href="/dashboard" className="footer-link">
+          <Link
+            href="/dashboard"
+            sx={{
+              color: "yellow",
+              textDecoration: "none",
+              marginLeft: "15px",
+              "&:hover": { textDecoration: "underline" },
+            }}
+          >
             Dashboard
           </Link>
         </Box>
       </Box>
 
       {/*=== Bottom Section ===*/}
-      <Box className="footer-bottom">
-        <Typography variant="caption">
-          Codded by{" "}
+      <Box
+        sx={{
+          backgroundColor: "black",
+          color: "yellow",
+          textAlign: "center",
+          padding: "10px 0",
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            fontSize: "0.85rem",
+            fontFamily: '"Playwrite AU VIC Guides", sans-serif',
+            fontWeight: 400,
+            fontStyle: "normal",
+          }}
+        >
+          Coded by{" "}
           <Link
             href="https://github.com/KhoshfekrMH"
             target="_blank"
             rel="noopener noreferrer"
-            classsName="footer-link"
+            sx={{
+              color: "yellow",
+              textDecoration: "none",
+              "&:hover": { textDecoration: "underline" },
+            }}
           >
             Khoshfekr
           </Link>{" "}
-          with ❤️ & 🍵
+          with 🧠 & 🍵
         </Typography>
       </Box>
     </footer>

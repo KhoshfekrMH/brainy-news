@@ -8,7 +8,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MenuItem from "@mui/material/MenuItem";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
@@ -17,8 +16,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-
-import "./Navbar.css";
 
 const pages = [
   { name: "Home", path: "/" },
@@ -60,20 +57,19 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar position="static" className="navbar">
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "#1e1e1e", boxShadow: "none" }}
+    >
       <Toolbar>
         {/*====== Mobile Drawer Icon ======*/}
-        <Box
-          sx={{ display: { xs: "flex", md: "none" }, mr: 2 }}
-          className="navbar-mobile-menu"
-        >
+        <Box sx={{ display: { xs: "flex", md: "none" }, mr: 2 }}>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
             onClick={toggleDrawer(true)}
-            sx={{ display: { display: { xs: "flex", md: "none" } } }}
           >
             <MenuIcon />
           </IconButton>
@@ -89,10 +85,12 @@ const Navbar = () => {
             height: 50,
             width: 50,
             mr: 2,
+            borderRadius: "50%",
+            backgroundColor: "#ffd700", // Golden Yellow
+            boxShadow: "0 0 10px 4px rgba(255, 255, 255, 0.7)",
           }}
           alt="Brainy News Logo"
           src={logo}
-          className="navbar-logo"
         />
 
         {/*====== Title (Hidden on mobile) ======*/}
@@ -103,26 +101,42 @@ const Navbar = () => {
             flexGrow: 1,
             fontWeight: "bold",
             display: { xs: "none", md: "block" },
+            color: "#ffd700", // Golden Yellow
           }}
-          className="navbar-title"
         >
           Brainy News
         </Typography>
 
         {/*====== Desktop Navigation Links (Hidden on mobile) ======*/}
-        <Box
-          sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}
-          className="navbar-links"
-        >
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
           {pages.map((page) => (
             <Button
               key={page.name}
               component={Link}
               to={page.path}
-              sx={{ color: "white" }}
-              className={`navbar-button ${
-                location.pathname === page.path ? "navbar-button-active" : ""
-              }`}
+              sx={{
+                color: "#ffd700", // Golden Yellow
+                textTransform: "none",
+                fontSize: 16,
+                "&:hover": {
+                  color: "#fff9c4", // Pale Gold on hover
+                },
+                position:
+                  location.pathname === page.path ? "relative" : "initial",
+                "&.active": {
+                  color: "#ffd700", // Golden Yellow text
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    height: 2,
+                    backgroundColor: "#ffd700", // Golden Yellow
+                  },
+                },
+              }}
+              className={location.pathname === page.path ? "active" : ""}
             >
               {page.name}
             </Button>
@@ -131,7 +145,7 @@ const Navbar = () => {
 
         {/*====== Avatar with condition ======*/}
         {isLoggedIn && (
-          <Box sx={{ ml: 2 }} className="navbar-avatar">
+          <Box sx={{ ml: 2 }}>
             <Tooltip title="Profile">
               <IconButton>
                 <Avatar alt="User Avatar" src="https://picsum.photos/200/300" />
