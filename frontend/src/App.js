@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./shared/context/UserContext";
-import Header from "./shared//layout/Header";
+import PageLayout from "./shared/layout/PageLayout";
 import NewsCard from "./shared/components/UIElements/NewsCard";
 import { newsItems, banners } from "./shared/data/DummyData";
-import Footer from "./shared/layout/Footer";
 
 import "./App.css";
 
@@ -17,8 +16,7 @@ const Home = () => {
     console.log("Read more clicked");
   };
   return (
-    <div>
-      <Header showBanner={true} banners={banners} />
+    <PageLayout showBanner={true} banners={banners}>
       <div>
         {newsItems.map((news) => (
           <NewsCard
@@ -30,28 +28,23 @@ const Home = () => {
           />
         ))}
       </div>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 
 const News = () => {
   return (
-    <div>
-      <Header showBanner={false} />
+    <PageLayout showBanner={false}>
       <h1>News</h1>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 
 const Dashboard = () => {
   return (
-    <div>
-      <Header showBanner={false} />
+    <PageLayout showBanner={false}>
       <h1>Dashboard</h1>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 
