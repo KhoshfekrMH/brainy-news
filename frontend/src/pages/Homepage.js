@@ -3,8 +3,10 @@ import Grid from "@mui/material/Grid";
 import PageLayout from "../shared/layout/PageLayout";
 import NewsCard from "../shared/components/UIElements/NewsCard";
 import { newsItems, banners } from "../shared/data/DummyData";
+import { NewsContext } from "../shared/context/NewsContext";
 
 const Homepage = () => {
+  const { newsItems } = React.useContext(NewsContext);
   const handleReadMore = () => {
     {
       /*TODO: remove this dummy for test*/

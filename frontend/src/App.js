@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./shared/context/UserContext";
+import { NewsProvider } from "./shared/context/NewsContext";
 import PageLayout from "./shared/layout/PageLayout";
 import Homepage from "./pages/Homepage";
 
@@ -26,13 +27,15 @@ const Dashboard = () => {
 const App = () => {
   return (
     <UserProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </Router>
+      <NewsProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </Router>
+      </NewsProvider>
     </UserProvider>
   );
 };
