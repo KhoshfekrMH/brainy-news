@@ -4,17 +4,9 @@ import { UserProvider } from "./shared/context/UserContext";
 import { NewsProvider } from "./shared/context/NewsContext";
 import PageLayout from "./shared/layout/PageLayout";
 import Homepage from "./pages/Homepage";
+import News from "./pages/News";
 
 import "./App.css";
-
-//TODO: Remove dummy pages
-const News = () => {
-  return (
-    <PageLayout showBanner={false}>
-      <h1>News</h1>
-    </PageLayout>
-  );
-};
 
 const Dashboard = () => {
   return (

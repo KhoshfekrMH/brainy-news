@@ -8,9 +8,9 @@ export const NewsProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchNews = () => {
-      const sortedNews = initialNewsItems
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 5);
+      const sortedNews = initialNewsItems.sort(
+        (a, b) => new Date(b.date) - new Date(a.date),
+      );
       setNewsItems(sortedNews);
     };
 
