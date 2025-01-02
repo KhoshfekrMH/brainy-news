@@ -165,7 +165,7 @@ const Login = () => {
       >
         You have an account?{" "}
         <Link
-          href="/*UNDER CONSTRUCTION*/" //TODO: navigate to Sign Up
+          href="/sign-up"
           sx={{
             color: "#ffeb3b",
             fontWeight: "bold",
