@@ -2,21 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./shared/context/UserContext";
 import { NewsProvider } from "./shared/context/NewsContext";
-import PageLayout from "./shared/layout/PageLayout";
-import Homepage from "./pages/Homepage";
-import News from "./pages/News";
+import Dashboard from "./pages/Dashboard/pages/Dashboard";
 import SignUpEntry from "./pages/Dashboard/pages/SignUpEntry";
 import LogInEntry from "./pages/Dashboard/pages/LogInEntry";
+import Homepage from "./pages/Homepage";
+import News from "./pages/News";
 
 import "./App.css";
-
-const Dashboard = () => {
-  return (
-    <PageLayout showBanner={false}>
-      <h1>Dashboard</h1>
-    </PageLayout>
-  );
-};
 
 const App = () => {
   return (

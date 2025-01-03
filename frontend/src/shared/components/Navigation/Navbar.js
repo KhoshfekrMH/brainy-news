@@ -16,6 +16,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
   { name: "Home", path: "/" },
@@ -24,7 +26,7 @@ const pages = [
 ];
 
 const Navbar = () => {
-  const { isLoggedIn } = useContext(UserContext);
+  const { isLoggedIn, currentUser, logOut } = useContext(UserContext);
   const [drawerOpen, setDrawerOpen] = useState(false); // State for Drawer
 
   const location = useLocation();
@@ -144,13 +146,26 @@ const Navbar = () => {
         </Box>
 
         {/*====== Avatar with condition ======*/}
-        {isLoggedIn && (
+        {isLoggedIn && currentUser && (
           <Box sx={{ ml: 2 }}>
-            <Tooltip title="Profile">
+            <Tooltip title={currentUser.name}>
               <IconButton>
-                <Avatar alt="User Avatar" src="https://picsum.photos/200/300" />
+                <Avatar alt={currentUser.name} src={currentUser.avatar} />
               </IconButton>
             </Tooltip>
+            <Button
+              onClick={logOut}
+              sx={{
+                color: "#ffd700", // Golden Yellow
+                textTransform: "none",
+                fontSize: 16,
+                "&:hover": {
+                  color: "#fff9c4", // Pale Gold on hover
+                },
+              }}
+            >
+              Log Out
+            </Button>
           </Box>
         )}
       </Toolbar>

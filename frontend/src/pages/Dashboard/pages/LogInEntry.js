@@ -12,7 +12,7 @@ const SignInEntry = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "linear-gradient(180deg, #000000, #808080)", // Black to gray gradient
+          background: "linear-gradient(180deg, #000000, #808080)",
         }}
       >
         <LogIn />

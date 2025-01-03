@@ -1,11 +1,21 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { users as dummyUsers } from "../data/DummyData";
 
 export const UserContext = createContext({});
 
+//TODO: remove localStorge
 export const UserProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    () => JSON.parse(localStorage.getItem("isLoggedIn")) || false,
+  );
+  const [currentUser, setCurrentUser] = useState(
+    () => JSON.parse(localStorage.getItem("currentUser")) || null,
+  );
+
+  useEffect(() => {
+    localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  }, [isLoggedIn, currentUser]);
 
   const logIn = (email, password) => {
     const user = dummyUsers.find(
@@ -40,6 +50,8 @@ export const UserProvider = ({ children }) => {
   const logOut = () => {
     setIsLoggedIn(false);
     setCurrentUser(null);
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("currentUser");
   };
 
   return (

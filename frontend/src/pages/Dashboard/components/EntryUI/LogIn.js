@@ -17,7 +17,7 @@ const validationSchema = yup.object({
 });
 
 const Login = () => {
-  const { logIn } = useContext(UserContext); // Using logIn from UserContext
+  const { logIn } = useContext(UserContext);
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
@@ -32,7 +32,7 @@ const Login = () => {
       if (user) {
         setError("");
         console.log("Logged In:", user);
-        navigate("/*UNDER CONSTRUCTION*/"); //TODO: navigate to Dashboard
+        navigate("/dashboard");
       } else {
         setError("Invalid email or password");
       }
