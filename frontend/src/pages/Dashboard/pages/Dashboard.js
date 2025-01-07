@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../../shared/context/UserContext";
 import PageLayout from "../../../shared/layout/PageLayout";
+import DashboardMenu from "../components/DashboardMenuUI/DashboardMenu";
 
 const Dashboard = () => {
   const { isLoggedIn } = useContext(UserContext);
@@ -19,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <PageLayout showBanner={false}>
-      <h1>Dashboard</h1>
+      <DashboardMenu />
     </PageLayout>
   );
 };
