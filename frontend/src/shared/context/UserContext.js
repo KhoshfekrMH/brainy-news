@@ -3,7 +3,7 @@ import { users as dummyUsers } from "../data/DummyData";
 
 export const UserContext = createContext({});
 
-//TODO: remove localStorge
+// TODO: remove localStorage
 export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     () => JSON.parse(localStorage.getItem("isLoggedIn")) || false,
@@ -11,6 +11,7 @@ export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     () => JSON.parse(localStorage.getItem("currentUser")) || null,
   );
+  const [users, setUsers] = useState(dummyUsers); // Add users state
 
   useEffect(() => {
     localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
@@ -18,7 +19,7 @@ export const UserProvider = ({ children }) => {
   }, [isLoggedIn, currentUser]);
 
   const logIn = (email, password) => {
-    const user = dummyUsers.find(
+    const user = users.find(
       (user) => user.email === email && user.password === password,
     );
     if (user) {
@@ -29,17 +30,17 @@ export const UserProvider = ({ children }) => {
   };
 
   const signUp = (name, email, password) => {
-    const userExists = dummyUsers.some((user) => user.email === email);
+    const userExists = users.some((user) => user.email === email);
     if (!userExists) {
       const newUser = {
-        id: dummyUsers.length + 1,
+        id: users.length + 1,
         name,
         email,
         password,
-        avatar: "https://picsum.photos/50/50", //TODO: remove this dummy for test
+        avatar: "https://picsum.photos/50/50", // TODO: remove this dummy for test
         role: "user",
       };
-      dummyUsers.push(newUser);
+      setUsers([...users, newUser]);
       setIsLoggedIn(true);
       setCurrentUser(newUser);
       return newUser;
@@ -56,7 +57,15 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ isLoggedIn, currentUser, logIn, signUp, logOut }}
+      value={{
+        isLoggedIn,
+        currentUser,
+        logIn,
+        signUp,
+        logOut,
+        users,
+        setUsers,
+      }}
     >
       {children}
     </UserContext.Provider>
