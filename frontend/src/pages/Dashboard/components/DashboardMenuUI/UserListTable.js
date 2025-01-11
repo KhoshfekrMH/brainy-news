@@ -13,10 +13,12 @@ import {
   Button,
   Box,
   Avatar,
+  FormControl,
+  MenuItem,
+  Select,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
-import EditIcon from "@mui/icons-material/Edit";
 
 const UserListTable = () => {
   const { users, setUsers } = useContext(UserContext);
@@ -29,6 +31,8 @@ const UserListTable = () => {
     avatar: "https://picsum.photos/50/50",
   });
   const [editing, setEditing] = useState(null);
+
+  const filteredUsers = users.filter((user) => user.role !== "owner");
 
   const handleNewUserChange = (key, value) => {
     setNewUser((prev) => ({ ...prev, [key]: value }));
@@ -114,7 +118,7 @@ const UserListTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {users.map((user) => (
+            {filteredUsers.map((user) => (
               <TableRow key={user.id}>
                 <TableCell>
                   <Avatar src={user.avatar} alt={user.name} />
@@ -147,13 +151,17 @@ const UserListTable = () => {
                 </TableCell>
                 <TableCell>
                   {editing === user.id ? (
-                    <TextField
-                      value={user.role}
-                      onChange={(e) =>
-                        handleEditChange(user.id, "role", e.target.value)
-                      }
-                      size="small"
-                    />
+                    <FormControl size="small">
+                      <Select
+                        value={user.role}
+                        onChange={(e) =>
+                          handleEditChange(user.id, "role", e.target.value)
+                        }
+                      >
+                        <MenuItem value="user">User</MenuItem>
+                        <MenuItem value="admin">Admin</MenuItem>
+                      </Select>
+                    </FormControl>
                   ) : (
                     user.role
                   )}

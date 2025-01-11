@@ -1,9 +1,15 @@
+//TODO: update it for backend
 import React, { createContext, useState, useEffect } from "react";
-import { users as dummyUsers } from "../data/DummyData";
+import {
+  users as dummyUsers,
+  createUser,
+  readUser,
+  updateUser,
+  deleteUser,
+} from "../data/DummyData";
 
 export const UserContext = createContext({});
 
-// TODO: remove localStorage
 export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     () => JSON.parse(localStorage.getItem("isLoggedIn")) || false,
@@ -11,8 +17,9 @@ export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     () => JSON.parse(localStorage.getItem("currentUser")) || null,
   );
-  const [users, setUsers] = useState(dummyUsers); // Add users state
+  const [users, setUsers] = useState(dummyUsers);
 
+  // Sync with localStorage
   useEffect(() => {
     localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -32,14 +39,13 @@ export const UserProvider = ({ children }) => {
   const signUp = (name, email, password) => {
     const userExists = users.some((user) => user.email === email);
     if (!userExists) {
-      const newUser = {
-        id: users.length + 1,
+      const newUser = createUser({
         name,
         email,
         password,
-        avatar: "https://picsum.photos/50/50", // TODO: remove this dummy for test
+        avatar: "https://picsum.photos/50/50",
         role: "user",
-      };
+      });
       setUsers([...users, newUser]);
       setIsLoggedIn(true);
       setCurrentUser(newUser);
