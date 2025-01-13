@@ -40,7 +40,7 @@ WIP
 
 1. **Clone the Repository**:  
    ```bash
-   git clone https://github.com/your-username/brainy-news.git
+   git clone https://github.com/KhoshfekrMH/brainy-news.git
    cd brainy-news
    ```
 
@@ -54,7 +54,7 @@ WIP
    yarn start
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 ---
 
 ### 🌐 **Live Demo**  
@@ -84,4 +84,4 @@ If you have any questions or suggestions, feel free to reach out:
 ---
 
 ### 🔖 **Credits**  
-Built with ❤️ using **React** and **Material-UI**.  
+Built with 🧠 and 🍵 using **React** and **Material-UI**.  
