@@ -4,9 +4,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 import CardActions from "@mui/material/CardActions";
+import { users } from "../../data/DummyData";
 
-const NewsCard = ({ image, title, intro, onReadMore }) => {
+const NewsCard = ({ image, title, intro, onReadMore, writerId, date }) => {
   return (
     <Card
       sx={{
@@ -34,6 +36,26 @@ const NewsCard = ({ image, title, intro, onReadMore }) => {
           {intro}
         </Typography>
       </CardContent>
+
+      {/*== Writer Name ==*/}
+      <Box>
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          sx={{ fontStyle: "italic", marginLeft: "8px" }}
+        >
+          {users.find((user) => user.id === writerId).name}
+        </Typography>
+      </Box>
+      <Box>
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          sx={{ fontStyle: "italic", marginLeft: "8px" }}
+        >
+          {date.split("T")[0]}
+        </Typography>
+      </Box>
 
       {/*====== Read More Button ======*/}
       <CardActions>

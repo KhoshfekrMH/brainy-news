@@ -21,6 +21,8 @@ const News = () => {
               title={news.title}
               intro={news.intro}
               onReadMore={handleReadMore}
+              writerId={news.writerId}
+              date={news.date}
             />
           </Grid>
         ))}

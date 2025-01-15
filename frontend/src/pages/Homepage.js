@@ -27,6 +27,8 @@ const Homepage = () => {
               title={news.title}
               intro={news.intro}
               onReadMore={handleReadMore}
+              date={news.date}
+              writerId={news.writerId}
             />
           </Grid>
         ))}
