@@ -10,7 +10,7 @@ const DashboardMenu = () => {
   const { currentUser } = useContext(UserContext);
   const [selectedTab, setSelectedTab] = useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setSelectedTab(newValue);
   };
 
