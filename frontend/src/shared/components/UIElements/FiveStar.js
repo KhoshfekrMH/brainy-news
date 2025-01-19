@@ -3,31 +3,27 @@ import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
 import Tooltip from "@mui/material/Tooltip";
 
-const FiveStar = ({ defaultValue = 0, onRatingChange }) => {
-  const [rating, setRating] = useState(defaultValue);
-
-  const handleRatingChange = (newValue) => {
-    setRating(newValue);
+const FiveStar = ({ value = 0, onRatingChange }) => {
+  const handleRatingChange = (event, newValue) => {
     if (onRatingChange) {
       onRatingChange(newValue);
     }
   };
 
   return (
-    <Tooltip title={`Rating: ${rating || "Not Rated"}`}>
+    <Tooltip title={`Rating: ${value.toFixed(1) || "Not Rated"}`}>
       <Rating
         name="five-star-rating"
-        value={rating}
+        value={value}
         onChange={handleRatingChange}
-        precision={1}
+        precision={0.1}
         max={5}
         sx={{
           display: "flex",
           justifyContent: "center",
           fontSize: "2rem",
-          color: "gold",
-          "& .MuiRating-iconEmpty": {
-            color: "#ccc",
+          "& .MuiRating-icon": {
+            color: "#FFD700",
           },
         }}
       />
