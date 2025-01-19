@@ -1,33 +1,35 @@
-//TODO: connect it to the backend
+//TODO: connect it to backend
 import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
-import Tooltip from "@mui/material/Tooltip";
 
-const FiveStar = ({ value = 0, onRatingChange }) => {
+const FiveStar = ({ averageRating = 0, onRatingChange }) => {
+  const [userRating, setUserRating] = useState(null);
+
   const handleRatingChange = (event, newValue) => {
+    event.preventDefault();
+    setUserRating(newValue);
     if (onRatingChange) {
       onRatingChange(newValue);
     }
   };
 
   return (
-    <Tooltip title={`Rating: ${value.toFixed(1) || "Not Rated"}`}>
-      <Rating
-        name="five-star-rating"
-        value={value}
-        onChange={handleRatingChange}
-        precision={0.1}
-        max={5}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          fontSize: "2rem",
-          "& .MuiRating-icon": {
-            color: "#FFD700",
-          },
-        }}
-      />
-    </Tooltip>
+    <Rating
+      name="five-star-rating"
+      value={userRating !== null ? userRating : averageRating}
+      onChange={handleRatingChange}
+      precision={1}
+      max={5}
+      sx={{
+        fontSize: "1.5rem",
+        "& .MuiRating-iconFilled": {
+          color: "#FFD700",
+        },
+        "& .MuiRating-iconHover": {
+          color: "#FFC107",
+        },
+      }}
+    />
   );
 };
 

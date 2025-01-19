@@ -8,7 +8,7 @@ export const newsItems = [
     body: "As we move into 2024, the tech industry is buzzing with innovation. From AI advancements to green technologies, these trends will shape our future...",
     date: "2024-12-23T18:25:43.511Z",
     writerId: 1,
-    rating: 4.2,
+    rating: 4,
     totalRatings: 152,
   },
   {
@@ -20,7 +20,7 @@ export const newsItems = [
     body: "Regular exercise has been proven to improve cardiovascular health, reduce stress, and enhance overall well-being. Learn how to start...",
     date: "2024-12-22T16:00:00.000Z",
     writerId: 2,
-    rating: 4.5,
+    rating: 3,
     totalRatings: 98,
   },
   {
@@ -32,7 +32,7 @@ export const newsItems = [
     body: "From the beaches of Bali to the cultural hubs of Europe, these destinations offer unique experiences and breathtaking sights...",
     date: "2024-12-21T10:30:00.000Z",
     writerId: 3,
-    rating: 4.8,
+    rating: 1,
     totalRatings: 233,
   },
   {
@@ -43,7 +43,7 @@ export const newsItems = [
     body: "Planning ahead financially is crucial for long-term security. This guide provides actionable tips to save and invest wisely...",
     date: "2024-12-20T08:15:00.000Z",
     writerId: 1,
-    rating: 3.9,
+    rating: 3,
     totalRatings: 76,
   },
   {
@@ -54,7 +54,7 @@ export const newsItems = [
     body: "The championship finals concluded with thrilling performances and unexpected victories. Here’s a breakdown of the highlights...",
     date: "2024-12-19T19:45:00.000Z",
     writerId: 2,
-    rating: 4.7,
+    rating: 2,
     totalRatings: 184,
   },
   {
@@ -65,7 +65,7 @@ export const newsItems = [
     body: "Astronomers have unveiled a new celestial phenomenon that could redefine our understanding of the universe. Here's what you need to know...",
     date: "2024-12-18T14:00:00.000Z",
     writerId: 3,
-    rating: 4.6,
+    rating: 5,
     totalRatings: 210,
   },
   {
@@ -76,7 +76,7 @@ export const newsItems = [
     body: "A community garden project has brought neighbors closer and created a beautiful green space. Learn about the project’s impact...",
     date: "2024-12-17T09:00:00.000Z",
     writerId: 1,
-    rating: 4.1,
+    rating: 4,
     totalRatings: 64,
   },
   {
@@ -87,7 +87,7 @@ export const newsItems = [
     body: "This month’s lineup features blockbuster hits and indie gems. From action-packed thrillers to heartfelt dramas, there’s something for everyone...",
     date: "2024-12-16T20:15:00.000Z",
     writerId: 2,
-    rating: 4.4,
+    rating: 1,
     totalRatings: 89,
   },
   {
@@ -98,7 +98,7 @@ export const newsItems = [
     body: "Online learning can be challenging, but with the right strategies, it’s highly rewarding. Here are some techniques to enhance your experience...",
     date: "2024-12-15T11:30:00.000Z",
     writerId: 3,
-    rating: 4.0,
+    rating: 4,
     totalRatings: 72,
   },
   {
@@ -110,7 +110,7 @@ export const newsItems = [
     body: "Plastic pollution is a major global issue. Discover practical ways to minimize waste and contribute to a healthier planet...",
     date: "2024-12-14T17:45:00.000Z",
     writerId: 1,
-    rating: 4.3,
+    rating: 4,
     totalRatings: 123,
   },
 ];
@@ -118,21 +118,21 @@ export const newsItems = [
 export const banners = [
   {
     id: 1,
-    src: "https://picsum.photos/200/300",
+    src: "https://picsum.photos/1000/500",
     alt: "Banner 1",
     title: "Banner Title 1",
     link: "/news/1",
   },
   {
     id: 2,
-    src: "https://picsum.photos/200/300",
+    src: "https://picsum.photos/1000/500",
     alt: "Banner 2",
     title: "Banner Title 2",
     link: "/news/2",
   },
   {
     id: 3,
-    src: "https://picsum.photos/200/300",
+    src: "https://picsum.photos/1000/500",
     alt: "Banner 3",
     title: "Banner Title 3",
     link: "/news/3",
