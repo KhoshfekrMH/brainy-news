@@ -3,7 +3,7 @@ export const newsItems = [
   {
     id: 1,
     title: "Breaking News: Technology Trends 2024",
-    image: "https://picsum.photos/200/300?random=1",
+    image: "https://picsum.photos/600/600?random=1",
     intro: "Discover the top technology trends set to revolutionize 2024.",
     body: "As we move into 2024, the tech industry is buzzing with innovation. From AI advancements to green technologies, these trends will shape our future...",
     date: "2024-12-23T18:25:43.511Z",
@@ -14,7 +14,7 @@ export const newsItems = [
   {
     id: 2,
     title: "Health Insights: Benefits of Regular Exercise",
-    image: "https://picsum.photos/200/300?random=2",
+    image: "https://picsum.photos/600/600?random=2",
     intro:
       "Explore the physical and mental benefits of incorporating exercise into your daily routine.",
     body: "Regular exercise has been proven to improve cardiovascular health, reduce stress, and enhance overall well-being. Learn how to start...",
@@ -26,7 +26,7 @@ export const newsItems = [
   {
     id: 3,
     title: "Travel Guide: Top 10 Destinations for 2024",
-    image: "https://picsum.photos/200/300?random=3",
+    image: "https://picsum.photos/600/600?random=3",
     intro:
       "Plan your next adventure with our list of the top 10 destinations for 2024.",
     body: "From the beaches of Bali to the cultural hubs of Europe, these destinations offer unique experiences and breathtaking sights...",
@@ -38,7 +38,7 @@ export const newsItems = [
   {
     id: 4,
     title: "Financial Tips: Saving for the Future",
-    image: "https://picsum.photos/200/300?random=4",
+    image: "https://picsum.photos/600/600?random=4",
     intro: "Secure your financial future with these expert savings tips.",
     body: "Planning ahead financially is crucial for long-term security. This guide provides actionable tips to save and invest wisely...",
     date: "2024-12-20T08:15:00.000Z",
@@ -49,7 +49,7 @@ export const newsItems = [
   {
     id: 5,
     title: "Sports Update: Championship Results",
-    image: "https://picsum.photos/200/300?random=5",
+    image: "https://picsum.photos/600/600?random=5",
     intro: "Catch up on the latest results from the championship finals.",
     body: "The championship finals concluded with thrilling performances and unexpected victories. Here’s a breakdown of the highlights...",
     date: "2024-12-19T19:45:00.000Z",
@@ -60,7 +60,7 @@ export const newsItems = [
   {
     id: 6,
     title: "Science Breakthroughs: New Discovery in Space",
-    image: "https://picsum.photos/200/300?random=6",
+    image: "https://picsum.photos/600/600?random=6",
     intro: "A groundbreaking discovery in space has scientists excited.",
     body: "Astronomers have unveiled a new celestial phenomenon that could redefine our understanding of the universe. Here's what you need to know...",
     date: "2024-12-18T14:00:00.000Z",
@@ -71,7 +71,7 @@ export const newsItems = [
   {
     id: 7,
     title: "Local News: Community Garden Project",
-    image: "https://picsum.photos/200/300?random=7",
+    image: "https://picsum.photos/600/600?random=7",
     intro: "Residents come together to create a vibrant community garden.",
     body: "A community garden project has brought neighbors closer and created a beautiful green space. Learn about the project’s impact...",
     date: "2024-12-17T09:00:00.000Z",
@@ -82,7 +82,7 @@ export const newsItems = [
   {
     id: 8,
     title: "Entertainment: Movie Releases This Month",
-    image: "https://picsum.photos/200/300?random=8",
+    image: "https://picsum.photos/600/600?random=8",
     intro: "Check out the most anticipated movie releases for December.",
     body: "This month’s lineup features blockbuster hits and indie gems. From action-packed thrillers to heartfelt dramas, there’s something for everyone...",
     date: "2024-12-16T20:15:00.000Z",
@@ -93,7 +93,7 @@ export const newsItems = [
   {
     id: 9,
     title: "Education: Tips for Effective Online Learning",
-    image: "https://picsum.photos/200/300?random=9",
+    image: "https://picsum.photos/600/600?random=9",
     intro: "Master the art of online learning with these helpful tips.",
     body: "Online learning can be challenging, but with the right strategies, it’s highly rewarding. Here are some techniques to enhance your experience...",
     date: "2024-12-15T11:30:00.000Z",
@@ -104,12 +104,34 @@ export const newsItems = [
   {
     id: 10,
     title: "Environment: Reducing Plastic Waste",
-    image: "https://picsum.photos/200/300?random=10",
+    image: "https://picsum.photos/600/600?random=10",
     intro:
       "Learn how to reduce your plastic waste and protect the environment.",
     body: "Plastic pollution is a major global issue. Discover practical ways to minimize waste and contribute to a healthier planet...",
     date: "2024-12-14T17:45:00.000Z",
     writerId: 1,
+    rating: 4,
+    totalRatings: 123,
+  },
+  {
+    id: 11,
+    title: "Lorem ipsum dolor sit amet, consectetur",
+    image: "https://picsum.photos/600/600?random=11",
+    intro: "Lorem ipsum odor amet,",
+    body: "Lorem ipsum odor amet, consectetuer adipiscing elit. Imperdiet urna cursus sit, lacinia mauris ut in. Bibendum torquent diam lobortis dis sed class scelerisque dui.",
+    date: "2024-12-14T17:45:00.000Z",
+    writerId: 1,
+    rating: 4,
+    totalRatings: 123,
+  },
+  {
+    id: 12,
+    title: "Lorem ipsum dolor sit amet, consectetur",
+    image: "https://picsum.photos/600/600?random=12",
+    intro: "Lorem ipsum odor amet,",
+    body: "Lorem ipsum odor amet, consectetuer adipiscing elit. Imperdiet urna cursus sit, lacinia mauris ut in. Bibendum torquent diam lobortis dis sed class scelerisque dui.",
+    date: "2024-12-14T17:45:00.000Z",
+    writerId: 2,
     rating: 4,
     totalRatings: 123,
   },
