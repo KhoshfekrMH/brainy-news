@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -8,16 +9,22 @@ import Box from "@mui/material/Box";
 import CardActions from "@mui/material/CardActions";
 import { users } from "../../data/DummyData";
 
-const NewsCard = ({ image, title, intro, onReadMore, writerId, date }) => {
+const NewsCard = ({ id, image, title, intro, writerId, date }) => {
+  const navigate = useNavigate();
+
+  const onReadMore = () => {
+    navigate(`/news/${id}`);
+  };
+
   return (
     <Card
       sx={{
         maxWidth: 345,
         margin: "16px auto",
-        borderRadius: "8px", // rounded corners
-        transition: "box-shadow 0.3s ease", // smooth shadow transition
+        borderRadius: "8px",
+        transition: "box-shadow 0.3s ease",
         "&:hover": {
-          boxShadow: "0 6px 25px rgba(255, 215, 0, 0.8)", // yellow shadow on hover
+          boxShadow: "0 6px 25px rgba(255, 215, 0, 0.8)",
         },
       }}
     >
@@ -64,11 +71,11 @@ const NewsCard = ({ image, title, intro, onReadMore, writerId, date }) => {
           color="primary"
           onClick={onReadMore}
           sx={{
-            backgroundColor: "#ffd700", // yellow background
-            color: "#1e1e1e", // black text
-            transition: "background-color 0.3s ease", // smooth background transition
+            backgroundColor: "#ffd700",
+            color: "#1e1e1e",
+            transition: "background-color 0.3s ease",
             "&:hover": {
-              backgroundColor: "#e5c100", // dark yellow on hover
+              backgroundColor: "#e5c100",
             },
           }}
         >

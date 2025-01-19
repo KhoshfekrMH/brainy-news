@@ -22,11 +22,10 @@ const Homepage = () => {
         {recentNews.map((news) => (
           <Grid item xs={12} sm={6} md={4}>
             <NewsCard
-              key={news.id}
+              id={news.id}
               image={news.image}
               title={news.title}
               intro={news.intro}
-              onReadMore={handleReadMore}
               date={news.date}
               writerId={news.writerId}
             />

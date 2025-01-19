@@ -17,10 +17,10 @@ const News = () => {
         {newsItems.map((news) => (
           <Grid item key={news.id} xs={12} sm={6} md={4}>
             <NewsCard
+              id={news.id}
               image={news.image}
               title={news.title}
               intro={news.intro}
-              onReadMore={handleReadMore}
               writerId={news.writerId}
               date={news.date}
             />
