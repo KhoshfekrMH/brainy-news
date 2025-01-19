@@ -5,7 +5,6 @@ import PageLayout from "../../shared/layout/PageLayout";
 import FiveStar from "../../shared/components/UIElements/FiveStar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 
 const NewsDetail = () => {
   const { id } = useParams();
@@ -22,7 +21,9 @@ const NewsDetail = () => {
 
   const handleRatingChange = (newRating) => {
     const newTotalRating = totalRating + 1;
-    const updatedRating = (rating * totalRating + newRating) / newTotalRating;
+    const updatedRating = Math.round(
+      (rating * totalRating + newRating) / newTotalRating,
+    );
 
     setRating(updatedRating);
     setTotalRating(newTotalRating);
@@ -120,6 +121,7 @@ const NewsDetail = () => {
             {/* Rating */}
             <Box sx={{ marginY: "16px" }}>
               <FiveStar
+                newsId={newsItem.id}
                 averageRating={rating}
                 onRatingChange={handleRatingChange}
               />

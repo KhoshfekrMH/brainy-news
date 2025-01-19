@@ -10,14 +10,17 @@ const DashboardMenu = () => {
   const { currentUser } = useContext(UserContext);
   const [selectedTab, setSelectedTab] = useState(0);
 
-  const handleChange = (newValue) => {
+  const handleChange = (event, newValue) => {
+    event.preventDefault();
     setSelectedTab(newValue);
   };
 
-  // Tabs based on user role
   const adminTabs = ["News List", "User List"];
   const userTabs = ["Saved Articles", "Notifications"];
-  const tabs = currentUser?.role === "admin" ? adminTabs : userTabs;
+  const tabs =
+    currentUser?.role === "admin" || currentUser?.role === "owner"
+      ? adminTabs
+      : userTabs;
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>

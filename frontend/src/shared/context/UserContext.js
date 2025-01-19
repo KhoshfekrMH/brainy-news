@@ -1,12 +1,6 @@
 //TODO: update it for backend
 import React, { createContext, useState, useEffect } from "react";
-import {
-  users as dummyUsers,
-  createUser,
-  readUser,
-  updateUser,
-  deleteUser,
-} from "../data/DummyData";
+import { users as dummyUsers, createUser } from "../data/DummyData";
 
 export const UserContext = createContext({});
 
