@@ -5,6 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import UserListTable from "./UserListTable";
+import NewsList from "./NewsList";
 
 const DashboardMenu = () => {
   const { currentUser } = useContext(UserContext);
@@ -41,15 +42,13 @@ const DashboardMenu = () => {
       </Tabs>
 
       <Box sx={{ padding: 2 }}>
-        {tabs[selectedTab] === "News List" && (
-          <Typography variant="h6">News List Content</Typography>
-        )}
+        {tabs[selectedTab] === "News List" && <NewsList />}
         {tabs[selectedTab] === "User List" && <UserListTable />}
         {tabs[selectedTab] === "Bookmarks" && (
-          <Typography variant="h6">Saved Articles Content</Typography>
+          <Typography variant="h6">Work in progress....!</Typography>
         )}
         {tabs[selectedTab] === "Notifications" && (
-          <Typography variant="h6">Notifications Content</Typography>
+          <Typography variant="h6">Work in progress....!</Typography>
         )}
       </Box>
     </Box>

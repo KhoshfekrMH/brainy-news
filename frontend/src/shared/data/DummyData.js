@@ -190,7 +190,7 @@ export const users = [
 ];
 
 //TODO: NotSecure please remove it
-export const createUser = (user) => {
+export const createUser = (users) => {
   const id = users.length ? users[users.length - 1].id + 1 : 1;
   newUser.id = id;
   users.push(newUser);

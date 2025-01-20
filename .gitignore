@@ -186,3 +186,18 @@ sketch
 # .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/yarn,react,node,dotenv,database
+
+# Docker files and directories
+docker-compose.override.yml
+.dockerignore
+
+# Docker build cache
+**/Dockerfile-*
+**/Dockerfile.*
+**/docker-compose-*.yml
+
+# Docker volumes
+**/volumes/
+
+# Temporary files and logs created by Docker
+docker.log
