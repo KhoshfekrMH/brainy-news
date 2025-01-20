@@ -15,12 +15,10 @@ const DashboardMenu = () => {
     setSelectedTab(newValue);
   };
 
-  const adminTabs = ["News List", "User List"];
-  const userTabs = ["Saved Articles", "Notifications"];
   const tabs =
-    currentUser?.role === "admin" || currentUser?.role === "owner"
-      ? adminTabs
-      : userTabs;
+    currentUser.role === "owner" || currentUser.role === "admin"
+      ? ["Bookmarks", "Notifications", "User List", "News List"]
+      : ["Saved Articles", "Notifications"];
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
@@ -47,7 +45,7 @@ const DashboardMenu = () => {
           <Typography variant="h6">News List Content</Typography>
         )}
         {tabs[selectedTab] === "User List" && <UserListTable />}
-        {tabs[selectedTab] === "Saved Articles" && (
+        {tabs[selectedTab] === "Bookmarks" && (
           <Typography variant="h6">Saved Articles Content</Typography>
         )}
         {tabs[selectedTab] === "Notifications" && (

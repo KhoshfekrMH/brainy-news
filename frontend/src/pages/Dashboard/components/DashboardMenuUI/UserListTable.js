@@ -21,7 +21,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 
 const UserListTable = () => {
-  const { users, setUsers } = useContext(UserContext);
+  const { users, setUsers, currentUser } = useContext(UserContext);
   const [newUser, setNewUser] = useState({
     id: null,
     name: "",
@@ -32,7 +32,18 @@ const UserListTable = () => {
   });
   const [editing, setEditing] = useState(null);
 
-  const filteredUsers = users.filter((user) => user.role !== "owner");
+  const isOwner = currentUser.role === "owner";
+  const isAdmin = currentUser.role === "admin";
+
+  const filteredUsers = users.filter((user) => {
+    if (isOwner) {
+      return user.id !== currentUser.id;
+    }
+    if (isAdmin) {
+      return user.role === "user";
+    }
+    return false;
+  });
 
   const handleNewUserChange = (key, value) => {
     setNewUser((prev) => ({ ...prev, [key]: value }));
