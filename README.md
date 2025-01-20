@@ -31,11 +31,6 @@
 
 ---
 
-### 📸 **Screenshots**  
-WIP
-
----
-
 ### ⚙️ **Installation**  
 
 1. **Clone the Repository**:  
@@ -54,22 +49,12 @@ WIP
    yarn start
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Open [http://localhost:3000](http://localhost:3001) to view it in the browser.
 ---
 
 ### 🌐 **Live Demo**  
 Coming Soon! 🚧  
-
----
-
-### 🤝 **Contributing**  
-
-Contributions are welcome!  
-1. Fork the repository.  
-2. Create a new branch: `git checkout -b feature/your-feature-name`.  
-3. Commit your changes: `git commit -m "Add your feature"`.  
-4. Push to the branch: `git push origin feature/your-feature-name`.  
-5. Submit a pull request.  
+  
 
 ---
 
@@ -78,10 +63,3 @@ Contributions are welcome!
 If you have any questions or suggestions, feel free to reach out:  
 - 📧 **Email**: Khoshfekr2001@protonmail.com  
 ---
-
-🚀 **Stay Informed. Stay Brainy.** 🧠  
-
----
-
-### 🔖 **Credits**  
-Built with ❤️ using **React** and **Material-UI**.  
