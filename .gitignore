@@ -192,12 +192,11 @@ docker-compose.override.yml
 .dockerignore
 
 # Docker build cache
-**/Dockerfile-*
-**/Dockerfile.*
-**/docker-compose-*.yml
+Dockerfile
+docker-compose.yml
 
 # Docker volumes
-**/volumes/
+/volumes
 
 # Temporary files and logs created by Docker
 docker.log
